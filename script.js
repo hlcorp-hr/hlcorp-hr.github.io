@@ -545,3 +545,136 @@ document.addEventListener('DOMContentLoaded', () => {
 
 console.log('HLCorp HR Website Loaded Successfully!');
 
+// ===== i18n (EN/TH) =====
+const translations = {
+    en: {
+        'nav.home': 'Home',
+        'nav.jobs': 'Jobs',
+        'nav.about': 'About Us',
+        'nav.contact': 'Contact',
+        'nav.postJob': 'Post a Job',
+        'hero.title': 'Find Your Dream Career in Thailand',
+        'hero.subtitle': 'Connect with top employers across Bangkok, Chiang Mai, Phuket and beyond. Your next opportunity awaits.',
+        'hero.searchJob': 'Job title or keyword',
+        'hero.searchLocation': 'Location (e.g., Bangkok, Chiang Mai)',
+        'hero.searchBtn': 'Search Jobs',
+        'hero.popular': 'Popular:',
+        'featured.title': 'Featured Jobs',
+        'featured.viewAll': 'View All Jobs →',
+        'categories.title': 'Browse by Category',
+        'categories.subtitle': 'Explore opportunities in various industries',
+        'how.title': 'How It Works',
+        'how.subtitle': 'Find your perfect job in three simple steps',
+        'how.step1.title': 'Create Your Profile',
+        'how.step1.desc': 'Sign up and build your professional profile with your skills, experience, and preferences.',
+        'how.step2.title': 'Search & Apply',
+        'how.step2.desc': 'Browse thousands of job listings and apply to positions that match your qualifications.',
+        'how.step3.title': 'Get Hired',
+        'how.step3.desc': 'Connect with employers, attend interviews, and land your dream job in Thailand.',
+        'cta.title': 'Ready to Find Your Next Opportunity?',
+        'cta.subtitle': 'Join thousands of job seekers who found their dream careers through HLCorp HR',
+        'cta.browse': 'Browse Jobs',
+        'cta.contact': 'Contact Us',
+        'footer.seekers.title': 'For Job Seekers',
+        'footer.seekers.browse': 'Browse Jobs',
+        'footer.seekers.career': 'Career Advice',
+        'footer.seekers.resume': 'Resume Tips',
+        'footer.seekers.salary': 'Salary Guide',
+        'footer.employers.title': 'For Employers',
+        'footer.employers.post': 'Post a Job',
+        'footer.employers.search': 'Search Candidates',
+        'footer.employers.pricing': 'Pricing',
+        'footer.employers.solutions': 'HR Solutions',
+        'footer.company.title': 'Company',
+        'footer.company.about': 'About Us',
+        'footer.company.contact': 'Contact',
+        'footer.company.privacy': 'Privacy Policy',
+        'footer.company.terms': 'Terms of Service'
+    },
+    th: {
+        'nav.home': 'หน้าแรก',
+        'nav.jobs': 'งาน',
+        'nav.about': 'เกี่ยวกับเรา',
+        'nav.contact': 'ติดต่อเรา',
+        'nav.postJob': 'ประกาศงาน',
+        'hero.title': 'ค้นหาอาชีพในฝันของคุณในประเทศไทย',
+        'hero.subtitle': 'เชื่อมต่อกับนายจ้างชั้นนำทั่วกรุงเทพฯ เชียงใหม่ ภูเก็ต และอีกมากมาย โอกาสต่อไปของคุณรออยู่',
+        'hero.searchJob': 'ชื่องานหรือคำค้นหา',
+        'hero.searchLocation': 'สถานที่ (เช่น กรุงเทพฯ, เชียงใหม่)',
+        'hero.searchBtn': 'ค้นหางาน',
+        'hero.popular': 'ยอดนิยม:',
+        'featured.title': 'งานเด่น',
+        'featured.viewAll': 'ดูงานทั้งหมด →',
+        'categories.title': 'ค้นหาตามหมวดหมู่',
+        'categories.subtitle': 'สำรวจโอกาสในอุตสาหกรรมต่าง ๆ',
+        'how.title': 'วิธีการทำงาน',
+        'how.subtitle': 'หางานที่ใช่ใน 3 ขั้นตอน',
+        'how.step1.title': 'สร้างโปรไฟล์ของคุณ',
+        'how.step1.desc': 'สมัครและสร้างโปรไฟล์อาชีพพร้อมทักษะและประสบการณ์ของคุณ',
+        'how.step2.title': 'ค้นหาและสมัคร',
+        'how.step2.desc': 'เรียกดูตำแหน่งงานนับพันและสมัครงานที่ตรงกับคุณสมบัติ',
+        'how.step3.title': 'ได้งาน',
+        'how.step3.desc': 'เชื่อมต่อนายจ้าง นัดสัมภาษณ์ และเริ่มงานในฝันของคุณในประเทศไทย',
+        'cta.title': 'พร้อมค้นหาโอกาสครั้งต่อไปหรือยัง?',
+        'cta.subtitle': 'เข้าร่วมกับผู้หางานนับพันที่พบอาชีพในฝันกับ HLCorp HR',
+        'cta.browse': 'ดูงาน',
+        'cta.contact': 'ติดต่อเรา',
+        'footer.seekers.title': 'สำหรับผู้หางาน',
+        'footer.seekers.browse': 'ดูงาน',
+        'footer.seekers.career': 'คำแนะนำด้านอาชีพ',
+        'footer.seekers.resume': 'เทคนิคเขียนเรซูเม่',
+        'footer.seekers.salary': 'ฐานเงินเดือน',
+        'footer.employers.title': 'สำหรับนายจ้าง',
+        'footer.employers.post': 'ประกาศงาน',
+        'footer.employers.search': 'ค้นหาผู้สมัคร',
+        'footer.employers.pricing': 'ราคา',
+        'footer.employers.solutions': 'โซลูชันด้าน HR',
+        'footer.company.title': 'บริษัท',
+        'footer.company.about': 'เกี่ยวกับเรา',
+        'footer.company.contact': 'ติดต่อเรา',
+        'footer.company.privacy': 'นโยบายความเป็นส่วนตัว',
+        'footer.company.terms': 'เงื่อนไขการให้บริการ'
+    }
+};
+
+function setLanguage(lang) {
+    const dict = translations[lang] || translations.en;
+    document.documentElement.setAttribute('lang', lang);
+    localStorage.setItem('hl_i18n_lang', lang);
+
+    // Translate text content
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) el.textContent = dict[key];
+    });
+
+    // Translate placeholders
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (dict[key]) el.setAttribute('placeholder', dict[key]);
+    });
+
+    // Toggle active state on buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
+}
+
+// Initialize language from URL or localStorage
+const urlLang = new URLSearchParams(window.location.search).get('lang');
+const savedLang = localStorage.getItem('hl_i18n_lang');
+const initialLang = (urlLang || savedLang || 'en').toLowerCase();
+
+document.addEventListener('DOMContentLoaded', () => {
+    setLanguage(initialLang);
+    const switcher = document.getElementById('lang-switcher');
+    if (switcher) {
+        switcher.addEventListener('click', (e) => {
+            if (e.target.matches('.lang-btn')) {
+                const lang = e.target.getAttribute('data-lang');
+                setLanguage(lang);
+            }
+        });
+    }
+});
+

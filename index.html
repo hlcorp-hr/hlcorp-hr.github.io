@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MNDCJDBF');</script>
+    <!-- End Google Tag Manager -->
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-49EPW31G4X"></script>
     <script>
@@ -101,6 +108,10 @@
     </script>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MNDCJDBF"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -109,12 +120,16 @@
                     <h1>HLCorp <span>HR</span></h1>
                 </div>
                 <ul class="nav-menu" id="nav-menu">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="jobs.html">Jobs</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="#" class="btn-primary">Post a Job</a></li>
+                    <li><a href="index.html" class="active" data-i18n="nav.home">Home</a></li>
+                    <li><a href="jobs.html" data-i18n="nav.jobs">Jobs</a></li>
+                    <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
+                    <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+                    <li><a href="#" class="btn-primary" data-i18n="nav.postJob">Post a Job</a></li>
                 </ul>
+                <div class="lang-switcher" id="lang-switcher">
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="th">TH</button>
+                </div>
                 <div class="hamburger" id="hamburger">
                     <span></span>
                     <span></span>
@@ -128,15 +143,15 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Find Your Dream Career in Thailand</h1>
-                <p class="hero-subtitle">Connect with top employers across Bangkok, Chiang Mai, Phuket and beyond. Your next opportunity awaits.</p>
+                <h1 class="hero-title" data-i18n="hero.title">Find Your Dream Career in Thailand</h1>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">Connect with top employers across Bangkok, Chiang Mai, Phuket and beyond. Your next opportunity awaits.</p>
                 <div class="search-box">
-                    <input type="text" id="job-search" placeholder="Job title or keyword">
-                    <input type="text" id="location-search" placeholder="Location (e.g., Bangkok, Chiang Mai)">
-                    <button class="btn-search">Search Jobs</button>
+                    <input type="text" id="job-search" placeholder="Job title or keyword" data-i18n-placeholder="hero.searchJob">
+                    <input type="text" id="location-search" placeholder="Location (e.g., Bangkok, Chiang Mai)" data-i18n-placeholder="hero.searchLocation">
+                    <button class="btn-search" data-i18n="hero.searchBtn">Search Jobs</button>
                 </div>
                 <div class="popular-searches">
-                    <span>Popular:</span>
+                    <span data-i18n="hero.popular">Popular:</span>
                     <a href="jobs.html?q=software">Software Engineer</a>
                     <a href="jobs.html?q=marketing">Marketing</a>
                     <a href="jobs.html?q=sales">Sales</a>
@@ -174,8 +189,8 @@
     <section class="featured-jobs">
         <div class="container">
             <div class="section-header">
-                <h2>Featured Jobs</h2>
-                <a href="jobs.html" class="view-all">View All Jobs →</a>
+                <h2 data-i18n="featured.title">Featured Jobs</h2>
+                <a href="jobs.html" class="view-all" data-i18n="featured.viewAll">View All Jobs →</a>
             </div>
             <div class="jobs-grid" id="featured-jobs-container">
                 <!-- Jobs will be dynamically loaded -->
@@ -187,8 +202,8 @@
     <section class="categories">
         <div class="container">
             <div class="section-header">
-                <h2>Browse by Category</h2>
-                <p>Explore opportunities in various industries</p>
+                <h2 data-i18n="categories.title">Browse by Category</h2>
+                <p data-i18n="categories.subtitle">Explore opportunities in various industries</p>
             </div>
             <div class="categories-grid">
                 <div class="category-card">
@@ -239,24 +254,24 @@
     <section class="how-it-works">
         <div class="container">
             <div class="section-header">
-                <h2>How It Works</h2>
-                <p>Find your perfect job in three simple steps</p>
+                <h2 data-i18n="how.title">How It Works</h2>
+                <p data-i18n="how.subtitle">Find your perfect job in three simple steps</p>
             </div>
             <div class="steps-grid">
                 <div class="step-card">
                     <div class="step-number">1</div>
-                    <h3>Create Your Profile</h3>
-                    <p>Sign up and build your professional profile with your skills, experience, and preferences.</p>
+                    <h3 data-i18n="how.step1.title">Create Your Profile</h3>
+                    <p data-i18n="how.step1.desc">Sign up and build your professional profile with your skills, experience, and preferences.</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">2</div>
-                    <h3>Search & Apply</h3>
-                    <p>Browse thousands of job listings and apply to positions that match your qualifications.</p>
+                    <h3 data-i18n="how.step2.title">Search & Apply</h3>
+                    <p data-i18n="how.step2.desc">Browse thousands of job listings and apply to positions that match your qualifications.</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">3</div>
-                    <h3>Get Hired</h3>
-                    <p>Connect with employers, attend interviews, and land your dream job in Thailand.</p>
+                    <h3 data-i18n="how.step3.title">Get Hired</h3>
+                    <p data-i18n="how.step3.desc">Connect with employers, attend interviews, and land your dream job in Thailand.</p>
                 </div>
             </div>
         </div>
@@ -266,11 +281,11 @@
     <section class="cta">
         <div class="container">
             <div class="cta-content">
-                <h2>Ready to Find Your Next Opportunity?</h2>
-                <p>Join thousands of job seekers who found their dream careers through HLCorp HR</p>
+                <h2 data-i18n="cta.title">Ready to Find Your Next Opportunity?</h2>
+                <p data-i18n="cta.subtitle">Join thousands of job seekers who found their dream careers through HLCorp HR</p>
                 <div class="cta-buttons">
-                    <a href="jobs.html" class="btn-primary btn-large">Browse Jobs</a>
-                    <a href="contact.html" class="btn-secondary btn-large">Contact Us</a>
+                    <a href="jobs.html" class="btn-primary btn-large" data-i18n="cta.browse">Browse Jobs</a>
+                    <a href="contact.html" class="btn-secondary btn-large" data-i18n="cta.contact">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -291,30 +306,30 @@
                     </div>
                 </div>
                 <div class="footer-col">
-                    <h4>For Job Seekers</h4>
+                    <h4 data-i18n="footer.seekers.title">For Job Seekers</h4>
                     <ul>
-                        <li><a href="jobs.html">Browse Jobs</a></li>
-                        <li><a href="#">Career Advice</a></li>
-                        <li><a href="#">Resume Tips</a></li>
-                        <li><a href="#">Salary Guide</a></li>
+                        <li><a href="jobs.html" data-i18n="footer.seekers.browse">Browse Jobs</a></li>
+                        <li><a href="#" data-i18n="footer.seekers.career">Career Advice</a></li>
+                        <li><a href="#" data-i18n="footer.seekers.resume">Resume Tips</a></li>
+                        <li><a href="#" data-i18n="footer.seekers.salary">Salary Guide</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>For Employers</h4>
+                    <h4 data-i18n="footer.employers.title">For Employers</h4>
                     <ul>
-                        <li><a href="#">Post a Job</a></li>
-                        <li><a href="#">Search Candidates</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">HR Solutions</a></li>
+                        <li><a href="#" data-i18n="footer.employers.post">Post a Job</a></li>
+                        <li><a href="#" data-i18n="footer.employers.search">Search Candidates</a></li>
+                        <li><a href="#" data-i18n="footer.employers.pricing">Pricing</a></li>
+                        <li><a href="#" data-i18n="footer.employers.solutions">HR Solutions</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Company</h4>
+                    <h4 data-i18n="footer.company.title">Company</h4>
                     <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="about.html" data-i18n="footer.company.about">About Us</a></li>
+                        <li><a href="contact.html" data-i18n="footer.company.contact">Contact</a></li>
+                        <li><a href="#" data-i18n="footer.company.privacy">Privacy Policy</a></li>
+                        <li><a href="#" data-i18n="footer.company.terms">Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
