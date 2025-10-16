@@ -198,6 +198,8 @@ For support, email info@hlcorp-hr.com or create an issue in this repository.
 
 **HLCorp HR Team**
 
+Powered by [H.L. Corporation co.,ltd](https://hlcorp-hr.github.io)
+
 ---
 
 Made with ❤️ in Thailand 🇹🇭

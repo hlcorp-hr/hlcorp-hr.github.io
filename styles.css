@@ -643,6 +643,22 @@ body {
     color: rgba(255, 255, 255, 0.6);
 }
 
+.footer-bottom p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-bottom a {
+    color: #10b981;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.footer-bottom a:hover {
+    color: #34d399;
+    text-decoration: underline;
+}
+
 /* ===== Page Header ===== */
 .page-header {
     background: linear-gradient(135deg, #10b981 0%, #059669 100%);
