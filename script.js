@@ -336,20 +336,68 @@ if (contactForm) {
         const formData = new FormData(contactForm);
         const data = Object.fromEntries(formData);
         
-        // Simulate form submission
-        console.log('Form submitted:', data);
+        // Get form values
+        const firstName = data.firstName || '';
+        const lastName = data.lastName || '';
+        const email = data.email || '';
+        const phone = data.phone || '';
+        const subject = data.subject || '';
+        const message = data.message || '';
+        const newsletter = data.newsletter ? 'Yes' : 'No';
+        
+        // Map subject values to readable text
+        const subjectMap = {
+            'job-seeker': 'I\'m Looking for a Job',
+            'employer': 'I\'m Looking to Hire',
+            'partnership': 'Partnership Inquiry',
+            'general': 'General Inquiry',
+            'support': 'Support'
+        };
+        
+        const readableSubject = subjectMap[subject] || subject;
+        
+        // Create email content
+        const emailSubject = encodeURIComponent(`HLCorp HR Contact Form: ${readableSubject}`);
+        const emailBody = encodeURIComponent(`
+Contact Form Submission from HLCorp HR Website
+
+Name: ${firstName} ${lastName}
+Email: ${email}
+Phone: ${phone || 'Not provided'}
+Subject: ${readableSubject}
+
+Message:
+${message}
+
+Newsletter Subscription: ${newsletter}
+
+---
+This message was sent from the HLCorp HR website contact form.
+        `.trim());
         
         const formMessage = document.getElementById('form-message');
-        formMessage.className = 'form-message success';
-        formMessage.textContent = 'Thank you for your message! We will get back to you within 24 hours.';
         
-        // Reset form
-        contactForm.reset();
+        // Show loading message first
+        formMessage.className = 'form-message';
+        formMessage.textContent = 'Preparing your email...';
+        formMessage.style.display = 'block';
         
-        // Hide message after 5 seconds
+        // Small delay to show loading message, then open email client
         setTimeout(() => {
-            formMessage.style.display = 'none';
-        }, 5000);
+            // Open email client with pre-filled email
+            window.location.href = `mailto:hlcorphr.th@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+            
+            // Update message after opening email client
+            formMessage.className = 'form-message success';
+            formMessage.textContent = 'Your email client should now open with a pre-filled message. Please send the email to complete your inquiry.';
+            
+            // Hide message after 12 seconds
+            setTimeout(() => {
+                formMessage.style.display = 'none';
+                // Reset form after user has time to send email
+                contactForm.reset();
+            }, 12000);
+        }, 500);
     });
 }
 

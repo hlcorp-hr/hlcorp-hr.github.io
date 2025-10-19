@@ -930,6 +930,185 @@ input:checked + .slider:before {
     color: var(--text-dark);
 }
 
+/* ===== Additional Packages Section ===== */
+.packages-section {
+    padding: 4rem 0;
+    background-color: var(--bg-light);
+}
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.package-card {
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+}
+
+.package-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.featured-package {
+    border: 2px solid var(--primary-color);
+    transform: scale(1.05);
+}
+
+.package-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.package-header h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.package-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+.package-price .currency {
+    font-size: 1.25rem;
+    color: var(--text-dark);
+}
+
+.package-price .amount {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+.package-price .period {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.package-features {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.package-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+}
+
+.package-features i {
+    color: var(--primary-color);
+    font-size: 0.875rem;
+}
+
+/* ===== Advertising Section ===== */
+.ads-section {
+    padding: 4rem 0;
+}
+
+.ads-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.ad-card {
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+}
+
+.ad-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.ad-icon {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.ad-icon i {
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+
+.ad-card h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text-dark);
+}
+
+.ad-prices {
+    margin-bottom: 2rem;
+}
+
+.ad-price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ad-price-item:last-child {
+    border-bottom: none;
+}
+
+.ad-duration {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.ad-amount {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.ad-amount span {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-weight: 400;
+}
+
+.ad-features {
+    list-style: none;
+}
+
+.ad-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+}
+
+.ad-features i {
+    color: var(--primary-color);
+    font-size: 0.875rem;
+}
+
 .faq-section {
     padding: 4rem 0;
 }
@@ -1423,6 +1602,46 @@ input:checked + .slider:before {
 .social-btn:hover {
     background-color: var(--primary-color);
     color: white;
+}
+
+.line-qr-info {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.line-qr-info h3 {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.line-qr-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+.line-qr-code {
+    width: 150px;
+    height: 150px;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-md);
+    border: 2px solid var(--border-color);
+    transition: all 0.3s;
+}
+
+.line-qr-code:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-lg);
+}
+
+.line-qr-container p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin: 0;
 }
 
 .locations-section {
