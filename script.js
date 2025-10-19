@@ -15,177 +15,25 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// ===== Sample Job Data =====
-const sampleJobs = [
-    {
-        id: 1,
-        title: "Senior Software Engineer",
-        company: "Tech Innovations Co.",
-        logo: "💻",
-        location: "Bangkok",
-        type: "Full-time",
-        experience: "Senior Level",
-        salary: "80,000 - 120,000 THB",
-        salaryMin: 80000,
-        tags: ["JavaScript", "React", "Node.js"],
-        badge: "featured",
-        posted: "2 days ago"
-    },
-    {
-        id: 2,
-        title: "Marketing Manager",
-        company: "Digital Marketing Hub",
-        logo: "📱",
-        location: "Bangkok",
-        type: "Full-time",
-        experience: "Mid Level",
-        salary: "50,000 - 70,000 THB",
-        salaryMin: 50000,
-        tags: ["SEO", "Social Media", "Content"],
-        badge: "urgent",
-        posted: "1 day ago"
-    },
-    {
-        id: 3,
-        title: "Data Analyst",
-        company: "Analytics Pro Ltd.",
-        logo: "📊",
-        location: "Chiang Mai",
-        type: "Full-time",
-        experience: "Mid Level",
-        salary: "45,000 - 60,000 THB",
-        salaryMin: 45000,
-        tags: ["Python", "SQL", "Power BI"],
-        badge: null,
-        posted: "3 days ago"
-    },
-    {
-        id: 4,
-        title: "UX/UI Designer",
-        company: "Creative Studio",
-        logo: "🎨",
-        location: "Bangkok",
-        type: "Full-time",
-        experience: "Mid Level",
-        salary: "40,000 - 55,000 THB",
-        salaryMin: 40000,
-        tags: ["Figma", "Adobe XD", "Prototyping"],
-        badge: "featured",
-        posted: "4 days ago"
-    },
-    {
-        id: 5,
-        title: "Sales Executive",
-        company: "Global Trade Partners",
-        logo: "💼",
-        location: "Phuket",
-        type: "Full-time",
-        experience: "Entry Level",
-        salary: "25,000 - 40,000 THB",
-        salaryMin: 25000,
-        tags: ["B2B", "Customer Relations", "CRM"],
-        badge: null,
-        posted: "5 days ago"
-    },
-    {
-        id: 6,
-        title: "DevOps Engineer",
-        company: "Cloud Solutions Inc.",
-        logo: "☁️",
-        location: "Remote",
-        type: "Full-time",
-        experience: "Senior Level",
-        salary: "70,000 - 100,000 THB",
-        salaryMin: 70000,
-        tags: ["AWS", "Docker", "Kubernetes"],
-        badge: "featured",
-        posted: "1 week ago"
-    },
-    {
-        id: 7,
-        title: "Content Writer",
-        company: "Media Group Thailand",
-        logo: "✍️",
-        location: "Bangkok",
-        type: "Part-time",
-        experience: "Entry Level",
-        salary: "20,000 - 30,000 THB",
-        salaryMin: 20000,
-        tags: ["SEO Writing", "Copywriting", "Research"],
-        badge: null,
-        posted: "3 days ago"
-    },
-    {
-        id: 8,
-        title: "HR Manager",
-        company: "People Solutions Co.",
-        logo: "👥",
-        location: "Bangkok",
-        type: "Full-time",
-        experience: "Senior Level",
-        salary: "60,000 - 80,000 THB",
-        salaryMin: 60000,
-        tags: ["Recruitment", "Training", "Compliance"],
-        badge: "urgent",
-        posted: "2 days ago"
-    },
-    {
-        id: 9,
-        title: "Financial Analyst",
-        company: "Finance Pro Ltd.",
-        logo: "💰",
-        location: "Bangkok",
-        type: "Full-time",
-        experience: "Mid Level",
-        salary: "45,000 - 65,000 THB",
-        salaryMin: 45000,
-        tags: ["Excel", "Financial Modeling", "SAP"],
-        badge: null,
-        posted: "1 week ago"
-    },
-    {
-        id: 10,
-        title: "Customer Support Specialist",
-        company: "Service Excellence Co.",
-        logo: "📞",
-        location: "Chiang Mai",
-        type: "Full-time",
-        experience: "Entry Level",
-        salary: "18,000 - 25,000 THB",
-        salaryMin: 18000,
-        tags: ["Communication", "Problem Solving", "CRM"],
-        badge: null,
-        posted: "4 days ago"
-    },
-    {
-        id: 11,
-        title: "Project Manager",
-        company: "Construction Leaders",
-        logo: "🏗️",
-        location: "Pattaya",
-        type: "Full-time",
-        experience: "Senior Level",
-        salary: "70,000 - 95,000 THB",
-        salaryMin: 70000,
-        tags: ["PMP", "Agile", "Risk Management"],
-        badge: "featured",
-        posted: "2 days ago"
-    },
-    {
-        id: 12,
-        title: "Graphic Designer",
-        company: "Creative Agency Bangkok",
-        logo: "🖌️",
-        location: "Bangkok",
-        type: "Contract",
-        experience: "Mid Level",
-        salary: "35,000 - 50,000 THB",
-        salaryMin: 35000,
-        tags: ["Photoshop", "Illustrator", "Branding"],
-        badge: null,
-        posted: "5 days ago"
+// ===== Job Data Source (JSON) =====
+let sampleJobs = [];
+async function loadJobs() {
+    try {
+        const res = await fetch('data/jobs.json', { cache: 'no-store' });
+        if (!res.ok) throw new Error('Failed to load jobs.json');
+        const data = await res.json();
+        if (Array.isArray(data)) {
+            sampleJobs = data;
+        }
+    } catch (e) {
+        console.warn('Falling back to built-in sample jobs. Reason:', e.message);
+        sampleJobs = [
+            { id: 1, title: 'Senior Software Engineer', company: 'Tech Innovations Co.', logo: '💻', location: 'Bangkok', type: 'Full-time', experience: 'Senior Level', salary: '80,000 - 120,000 THB', salaryMin: 80000, tags: ['JavaScript','React','Node.js'], badge: 'featured', posted: '2 days ago' },
+            { id: 2, title: 'Marketing Manager', company: 'Digital Marketing Hub', logo: '📱', location: 'Bangkok', type: 'Full-time', experience: 'Mid Level', salary: '50,000 - 70,000 THB', salaryMin: 50000, tags: ['SEO','Social Media','Content'], badge: 'urgent', posted: '1 day ago' },
+            { id: 3, title: 'Data Analyst', company: 'Analytics Pro Ltd.', logo: '📊', location: 'Chiang Mai', type: 'Full-time', experience: 'Mid Level', salary: '45,000 - 60,000 THB', salaryMin: 45000, tags: ['Python','SQL','Power BI'], badge: null, posted: '3 days ago' }
+        ];
     }
-];
+}
 
 // ===== Job Card Creation =====
 function createJobCard(job) {
@@ -219,19 +67,24 @@ function createJobCard(job) {
 
 // ===== Featured Jobs on Homepage =====
 const featuredJobsContainer = document.getElementById('featured-jobs-container');
-if (featuredJobsContainer) {
+async function renderFeatured() {
+    if (!featuredJobsContainer) return;
+    if (!sampleJobs.length) await loadJobs();
     const featuredJobs = sampleJobs.slice(0, 6);
     featuredJobsContainer.innerHTML = featuredJobs.map(job => createJobCard(job)).join('');
 }
+renderFeatured();
 
 // ===== Jobs Page Functionality =====
 let currentPage = 1;
 const jobsPerPage = 6;
-let filteredJobs = [...sampleJobs];
+let filteredJobs = [];
 
-function renderJobs() {
+async function renderJobs() {
     const jobsList = document.getElementById('jobs-list');
     if (!jobsList) return;
+    if (!sampleJobs.length) await loadJobs();
+    if (!filteredJobs.length) filteredJobs = [...sampleJobs];
 
     const startIndex = (currentPage - 1) * jobsPerPage;
     const endIndex = startIndex + jobsPerPage;
@@ -371,8 +224,11 @@ if (document.getElementById('filter-search')) {
         });
     }
 
-    // Initial render
-    renderJobs();
+    // Initial render after loading data
+    loadJobs().then(() => {
+        filteredJobs = [...sampleJobs];
+        renderJobs();
+    });
 }
 
 // ===== Sorting =====
@@ -461,8 +317,13 @@ if (window.location.pathname.includes('jobs.html')) {
 // ===== Apply Job Function =====
 function applyJob(jobId) {
     const job = sampleJobs.find(j => j.id === jobId);
-    if (job) {
-        alert(`Thank you for your interest in the ${job.title} position at ${job.company}!\n\nIn a real application, this would redirect to an application form or open an application modal.`);
+    const modal = document.getElementById('apply-modal');
+    if (!modal) return;
+    modal.classList.add('active');
+
+    const jobcodeInput = document.getElementById('apply-jobcode');
+    if (job && jobcodeInput) {
+        jobcodeInput.value = job.id.toString();
     }
 }
 
@@ -540,6 +401,48 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transform = 'translateY(20px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
+    });
+
+    // Apply modal handlers
+    const applyClose = document.getElementById('apply-close');
+    const applyCancel = document.getElementById('apply-cancel');
+    const applyModal = document.getElementById('apply-modal');
+    const applyForm = document.getElementById('apply-form');
+
+    function closeApply() {
+        if (applyModal) applyModal.classList.remove('active');
+    }
+    applyClose?.addEventListener('click', closeApply);
+    applyCancel?.addEventListener('click', closeApply);
+    applyModal?.addEventListener('click', (e) => {
+        if (e.target === applyModal) closeApply();
+    });
+
+    // Build mailto with optional attachment instruction (note: mailto can't attach files)
+    applyForm?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = (document.getElementById('apply-name') || {}).value || '';
+        const email = (document.getElementById('apply-email') || {}).value || '';
+        const phone = (document.getElementById('apply-phone') || {}).value || '';
+        const jobcode = (document.getElementById('apply-jobcode') || {}).value || '';
+        const message = (document.getElementById('apply-message') || {}).value || '';
+
+        const subject = encodeURIComponent(`Job Application - ${jobcode}`);
+        const bodyLines = [
+            `Job Code: ${jobcode}`,
+            `Name: ${name}`,
+            `Email: ${email}`,
+            `Phone: ${phone}`,
+            '',
+            'Message:',
+            message,
+            '',
+            'Note: Please attach your CV to this email before sending.'
+        ];
+        const body = encodeURIComponent(bodyLines.join('\n'));
+        window.location.href = `mailto:hlcorphr.th@gmail.com?subject=${subject}&body=${body}`;
+
+        setTimeout(() => closeApply(), 400);
     });
 });
 

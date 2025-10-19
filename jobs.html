@@ -76,7 +76,7 @@
         <div class="container">
             <div class="nav-wrapper">
                 <div class="logo">
-                    <h1>HLCorp <span>HR</span></h1>
+                    <h1>HLCorp <span>HR <span class="beta-badge">BETA</span></span></h1>
                 </div>
                 <ul class="nav-menu" id="nav-menu">
                     <li><a href="index.html">Home</a></li>
@@ -241,6 +241,51 @@
     </footer>
 
     <script src="script.js"></script>
+    <!-- Apply Modal -->
+    <div class="modal-overlay" id="apply-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <span class="modal-title">Apply for Job</span>
+                <button class="modal-close" id="apply-close">×</button>
+            </div>
+            <div class="modal-body">
+                <form class="apply-form" id="apply-form">
+                    <div class="apply-row">
+                        <div>
+                            <label for="apply-name">Full Name *</label>
+                            <input type="text" id="apply-name" name="name" required>
+                        </div>
+                        <div>
+                            <label for="apply-email">Email *</label>
+                            <input type="email" id="apply-email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="apply-row">
+                        <div>
+                            <label for="apply-phone">Phone</label>
+                            <input type="tel" id="apply-phone" name="phone">
+                        </div>
+                        <div>
+                            <label for="apply-jobcode">Job Code/Number *</label>
+                            <input type="text" id="apply-jobcode" name="jobcode" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="apply-message">Message</label>
+                        <textarea id="apply-message" name="message" rows="4" placeholder="Brief intro or cover letter"></textarea>
+                    </div>
+                    <div>
+                        <label for="apply-cv">Attach CV (PDF/DOC) *</label>
+                        <input type="file" id="apply-cv" accept=".pdf,.doc,.docx" required>
+                    </div>
+                    <div class="apply-actions">
+                        <button type="button" class="btn-secondary btn-large btn-ghost" id="apply-cancel">Cancel</button>
+                        <button type="submit" class="btn-primary btn-large">Send Email</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 

@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "title": "Senior Software Engineer",
+    "company": "Tech Innovations Co.",
+    "logo": "💻",
+    "location": "Bangkok",
+    "type": "Full-time",
+    "experience": "Senior Level",
+    "salary": "80,000 - 120,000 THB",
+    "salaryMin": 80000,
+    "tags": ["JavaScript", "React", "Node.js"],
+    "badge": "featured",
+    "posted": "2 days ago"
+  },
+  {
+    "id": 2,
+    "title": "Marketing Manager",
+    "company": "Digital Marketing Hub",
+    "logo": "📱",
+    "location": "Bangkok",
+    "type": "Full-time",
+    "experience": "Mid Level",
+    "salary": "50,000 - 70,000 THB",
+    "salaryMin": 50000,
+    "tags": ["SEO", "Social Media", "Content"],
+    "badge": "urgent",
+    "posted": "1 day ago"
+  },
+  {
+    "id": 3,
+    "title": "Data Analyst",
+    "company": "Analytics Pro Ltd.",
+    "logo": "📊",
+    "location": "Chiang Mai",
+    "type": "Full-time",
+    "experience": "Mid Level",
+    "salary": "45,000 - 60,000 THB",
+    "salaryMin": 45000,
+    "tags": ["Python", "SQL", "Power BI"],
+    "badge": null,
+    "posted": "3 days ago"
+  }
+]
+
+
