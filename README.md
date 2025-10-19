@@ -179,7 +179,7 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 
 ## 📞 Support
 
-For support, email info@hlcorp-hr.com or create an issue in this repository.
+For support, email hlcorphr.th@gmail.com or create an issue in this repository.
 
 ## 🎯 Future Enhancements
 
