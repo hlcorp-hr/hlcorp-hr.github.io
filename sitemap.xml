@@ -24,6 +24,14 @@
         <priority>0.8</priority>
     </url>
     
+    <!-- Partners Page -->
+    <url>
+        <loc>https://hlcorp-hr.github.io/partners.html</loc>
+        <lastmod>2025-10-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
     <!-- About Page -->
     <url>
         <loc>https://hlcorp-hr.github.io/about.html</loc>

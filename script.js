@@ -28,9 +28,9 @@ async function loadJobs() {
     } catch (e) {
         console.warn('Falling back to built-in sample jobs. Reason:', e.message);
         sampleJobs = [
-            { id: 1, title: 'Senior Software Engineer', company: 'Tech Innovations Co.', logo: '💻', location: 'Bangkok', type: 'Full-time', experience: 'Senior Level', salary: '80,000 - 120,000 THB', salaryMin: 80000, tags: ['JavaScript','React','Node.js'], badge: 'featured', posted: '2 days ago' },
-            { id: 2, title: 'Marketing Manager', company: 'Digital Marketing Hub', logo: '📱', location: 'Bangkok', type: 'Full-time', experience: 'Mid Level', salary: '50,000 - 70,000 THB', salaryMin: 50000, tags: ['SEO','Social Media','Content'], badge: 'urgent', posted: '1 day ago' },
-            { id: 3, title: 'Data Analyst', company: 'Analytics Pro Ltd.', logo: '📊', location: 'Chiang Mai', type: 'Full-time', experience: 'Mid Level', salary: '45,000 - 60,000 THB', salaryMin: 45000, tags: ['Python','SQL','Power BI'], badge: null, posted: '3 days ago' }
+            { id: 1, title: 'Senior Software Engineer', company: 'Tech Innovations Co.', logo: '<i class="fa-solid fa-computer"></i>', location: 'Bangkok', type: 'Full-time', experience: 'Senior Level', salary: '80,000 - 120,000 THB', salaryMin: 80000, tags: ['JavaScript','React','Node.js'], badge: 'featured', posted: '2 days ago' },
+            { id: 2, title: 'Marketing Manager', company: 'Digital Marketing Hub', logo: '<i class="fa-solid fa-bullhorn"></i>', location: 'Bangkok', type: 'Full-time', experience: 'Mid Level', salary: '50,000 - 70,000 THB', salaryMin: 50000, tags: ['SEO','Social Media','Content'], badge: 'urgent', posted: '1 day ago' },
+            { id: 3, title: 'Data Analyst', company: 'Analytics Pro Ltd.', logo: '<i class="fa-solid fa-chart-column"></i>', location: 'Chiang Mai', type: 'Full-time', experience: 'Mid Level', salary: '45,000 - 60,000 THB', salaryMin: 45000, tags: ['Python','SQL','Power BI'], badge: null, posted: '3 days ago' }
         ];
     }
 }
@@ -38,7 +38,7 @@ async function loadJobs() {
 // ===== Job Card Creation =====
 function createJobCard(job) {
     const badgeHTML = job.badge ? 
-        `<span class="job-badge badge-${job.badge}">${job.badge === 'featured' ? '⭐ Featured' : '🔥 Urgent'}</span>` : '';
+        `<span class="job-badge badge-${job.badge}"><i class="fa-solid ${job.badge === 'featured' ? 'fa-star' : 'fa-fire'}"></i> ${job.badge === 'featured' ? 'Featured' : 'Urgent'}</span>` : '';
     
     return `
         <div class="job-card" data-job-id="${job.id}">
@@ -49,10 +49,10 @@ function createJobCard(job) {
             <h3 class="job-title">${job.title}</h3>
             <p class="company-name">${job.company}</p>
             <div class="job-meta">
-                <span class="meta-item">📍 ${job.location}</span>
-                <span class="meta-item">💼 ${job.type}</span>
-                <span class="meta-item">📈 ${job.experience}</span>
-                <span class="meta-item">🕒 ${job.posted}</span>
+                <span class="meta-item"><i class="fa-solid fa-location-dot"></i> ${job.location}</span>
+                <span class="meta-item"><i class="fa-solid fa-briefcase"></i> ${job.type}</span>
+                <span class="meta-item"><i class="fa-solid fa-chart-line"></i> ${job.experience}</span>
+                <span class="meta-item"><i class="fa-solid fa-clock"></i> ${job.posted}</span>
             </div>
             <div class="job-tags">
                 ${job.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
@@ -494,6 +494,121 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// ===== Post a Job Modal =====
+document.addEventListener('DOMContentLoaded', () => {
+    // Find all "Post a Job" buttons
+    const postJobButtons = document.querySelectorAll('a[data-i18n="nav.postJob"], a.btn-primary[data-i18n="nav.postJob"]');
+    
+    postJobButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            showPostJobModal();
+        });
+    });
+});
+
+function showPostJobModal() {
+    // Create modal HTML
+    const modalHTML = `
+        <div id="post-job-modal" class="modal-overlay">
+            <div class="modal post-job-modal">
+                <button class="modal-close" id="post-job-close">×</button>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <i class="fa-solid fa-briefcase"></i>
+                        <h2>Post a Job</h2>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <p class="post-job-message">
+                            Thank you for your interest in posting a job on HLCorp HR! 
+                        </p>
+                        <p class="post-job-message">
+                            Our job posting feature is currently under development. We're working hard to bring you a seamless experience for publishing your job listings.
+                        </p>
+                        
+                        <div class="contact-sales-section">
+                            <h3>Contact Our Sales Team</h3>
+                            <p>To discuss your recruitment needs and explore our available packages, please reach out to our sales team:</p>
+                            
+                            <div class="contact-methods">
+                                <div class="contact-method">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <div>
+                                        <strong>Email:</strong><br>
+                                        <a href="mailto:hlcorphr.th@gmail.com">hlcorphr.th@gmail.com</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-method">
+                                    <i class="fa-solid fa-comments"></i>
+                                    <div>
+                                        <strong>LINE:</strong><br>
+                                        <a href="https://lin.ee/MNhmdXS" target="_blank">@542qxycj</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-method">
+                                    <i class="fa-solid fa-headset"></i>
+                                    <div>
+                                        <strong>Chat Form:</strong><br>
+                                        <a href="contact.html">Contact Us</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="pricing-preview">
+                            <h3>Our Pricing Plans</h3>
+                            <p>Check out our affordable job posting packages:</p>
+                            <a href="pricing.html" class="btn-primary">View Pricing</a>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button class="btn-secondary btn-large" id="post-job-close-btn">Close</button>
+                        <a href="contact.html" class="btn-primary btn-large">Contact Sales</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Remove existing modal if any
+    const existingModal = document.getElementById('post-job-modal');
+    if (existingModal) {
+        existingModal.remove();
+    }
+    
+    // Insert modal into DOM
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+    
+    // Get modal elements
+    const modal = document.getElementById('post-job-modal');
+    const closeBtn = document.getElementById('post-job-close');
+    const closeBtn2 = document.getElementById('post-job-close-btn');
+    
+    // Show modal
+    modal.classList.add('active');
+    
+    // Close modal functions
+    const closeModal = () => {
+        modal.classList.remove('active');
+        setTimeout(() => modal.remove(), 300);
+    };
+    
+    // Close button click
+    closeBtn.addEventListener('click', closeModal);
+    closeBtn2.addEventListener('click', closeModal);
+    
+    // Click outside modal
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+}
+
 console.log('HLCorp HR Website Loaded Successfully!');
 
 // ===== i18n (EN/TH) =====
@@ -616,7 +731,7 @@ function setLanguage(lang) {
 // Initialize language from URL or localStorage
 const urlLang = new URLSearchParams(window.location.search).get('lang');
 const savedLang = localStorage.getItem('hl_i18n_lang');
-const initialLang = (urlLang || savedLang || 'en').toLowerCase();
+const initialLang = (urlLang || savedLang || 'th').toLowerCase();
 
 document.addEventListener('DOMContentLoaded', () => {
     setLanguage(initialLang);

@@ -800,9 +800,151 @@ body {
 .apply-actions { display: flex; gap: 0.75rem; justify-content: flex-end; margin-top: 0.5rem; }
 .btn-ghost { background: var(--bg-light); color: var(--text-dark); border: 1px solid var(--border-color); }
 
+/* ===== Post a Job Modal Styles ===== */
+.post-job-modal {
+    max-width: 700px;
+}
+
+.post-job-modal .modal-header {
+    display: flex !important;
+    align-items: center;
+    gap: 1rem;
+    justify-content: flex-start !important;
+}
+
+.post-job-modal .modal-header i {
+    font-size: 2rem;
+}
+
+.post-job-modal .modal-header h2 {
+    margin: 0;
+    font-size: 1.75rem;
+}
+
+.post-job-message {
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.contact-sales-section {
+    background-color: #f3f4f6;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.contact-sales-section h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+}
+
+.contact-sales-section p {
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.contact-method {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background-color: var(--bg-white);
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.contact-method i {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+
+.contact-method div {
+    font-size: 0.85rem;
+}
+
+.contact-method strong {
+    display: block;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+}
+
+.contact-method a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.contact-method a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+.pricing-preview {
+    background-color: #fffbeb;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #f59e0b;
+}
+
+.pricing-preview h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+}
+
+.pricing-preview p {
+    margin: 0 0 1rem 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.modal-footer {
+    display: flex;
+    gap: 0.75rem;
+    padding: 1.25rem;
+    background-color: #f9fafb;
+    justify-content: flex-end;
+    border-top: 1px solid var(--border-color);
+}
+
+.modal-footer .btn-secondary,
+.modal-footer .btn-primary {
+    margin: 0;
+}
+
 @media (max-width: 640px) {
     .apply-row { grid-template-columns: 1fr; }
+    
+    .contact-methods {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-footer {
+        flex-direction: column;
+    }
+    
+    .modal-footer button,
+    .modal-footer a {
+        width: 100%;
+    }
 }
+
 .pricing-toggle-section {
     background-color: var(--bg-white);
     padding: 2rem 0 0;
@@ -1059,6 +1201,14 @@ input:checked + .slider:before {
     color: var(--text-dark);
 }
 
+.ad-description {
+    font-size: 0.95rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
 .ad-prices {
     margin-bottom: 2rem;
 }
@@ -1107,6 +1257,55 @@ input:checked + .slider:before {
 .ad-features i {
     color: var(--primary-color);
     font-size: 0.875rem;
+}
+
+.contact-sales-card {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #059669 100%);
+    border: 2px solid var(--primary-color);
+}
+
+.contact-sales-card h3 {
+    color: var(--bg-white);
+}
+
+.contact-sales-card .ad-description {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-sales-text {
+    font-size: 0.95rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+}
+
+.contact-sales-info {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-sales-info p {
+    margin-bottom: 0.75rem;
+    color: var(--bg-white);
+    font-size: 0.95rem;
+}
+
+.contact-sales-info p:last-child {
+    margin-bottom: 0;
+}
+
+.contact-sales-card .btn-primary {
+    background-color: var(--bg-white);
+    color: var(--primary-color);
+    font-weight: 600;
+    border: none;
+}
+
+.contact-sales-card .btn-primary:hover {
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 .faq-section {
@@ -1674,7 +1873,225 @@ input:checked + .slider:before {
     line-height: 1.6;
 }
 
-/* ===== Responsive Design ===== */
+/* ===== Partners Page Styles ===== */
+.partners-section {
+    padding: 4rem 0;
+}
+
+.partners-intro {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.partners-intro h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.partners-intro p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.verification-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.verification-badge {
+    background-color: var(--bg-white);
+    border: 2px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.verification-badge:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+.verification-badge i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.verification-badge h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+}
+
+.verification-badge p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.partner-card {
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.partner-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+
+.partner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.partner-logo {
+    font-size: 3rem;
+}
+
+.partner-verification {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #d1fae5;
+    color: #047857;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.partner-verification i {
+    color: #10b981;
+}
+
+.partner-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.partner-industry {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.partner-description {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.partner-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+.detail-item i {
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.partner-registration {
+    background-color: #f9fafb;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.partner-registration p {
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.partner-registration p:last-child {
+    margin-bottom: 0;
+}
+
+.partner-registration strong {
+    color: var(--primary-color);
+}
+
+.seekers-cta {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #059669 100%);
+    color: var(--bg-white);
+    padding: 3rem 2rem;
+    border-radius: 0.75rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.seekers-cta h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--bg-white);
+}
+
+.seekers-cta p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.employers-cta {
+    background-color: #f3f4f6;
+    border: 2px solid var(--border-color);
+    padding: 3rem 2rem;
+    border-radius: 0.75rem;
+    text-align: center;
+}
+
+.employers-cta h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.employers-cta p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-muted);
+}
+
+/* ===== Responsive Media Queries ===== */
 @media (max-width: 1024px) {
     .jobs-layout {
         grid-template-columns: 1fr;
